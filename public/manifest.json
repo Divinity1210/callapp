@@ -1,0 +1,22 @@
+{
+  "name": "NLP 2026 Call Campaign",
+  "short_name": "NLP Calls",
+  "description": "Call campaign portal for NLP UK & Europe 2026",
+  "start_url": "/portal",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#e65100",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
