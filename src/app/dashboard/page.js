@@ -119,6 +119,7 @@ export default function DashboardPage() {
             </h2>
             <div className="stat-row"><span className="stat-label">🚌 Transport Requests</span><span className="stat-value stat-highlight">{data.filtered?.transportRequests || 0}</span></div>
             <div className="stat-row"><span className="stat-label">👶 Children Expected</span><span className="stat-value stat-highlight">{data.filtered?.totalChildren || 0}</span></div>
+            <div className="stat-row"><span className="stat-label">👥 Adults Coming Along</span><span className="stat-value stat-highlight">{data.filtered?.totalAdults || 0}</span></div>
             <div className="stat-row"><span className="stat-label">💍 Singles Connection</span><span className="stat-value">{inc.singles || 0}</span></div>
             <div className="stat-row"><span className="stat-label">💼 Career &amp; Business</span><span className="stat-value">{inc.career || 0}</span></div>
             <div className="stat-row"><span className="stat-label">🙏 Personal Prayers</span><span className="stat-value">{inc.prayers || 0}</span></div>

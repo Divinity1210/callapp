@@ -58,6 +58,7 @@ export default function PortalPage() {
   const [transport, setTransport] = useState('');
   const [childrenCount, setChildrenCount] = useState('');
   const [otherAdults, setOtherAdults] = useState('');
+  const [numAdults, setNumAdults] = useState('');
   const [comment, setComment] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -71,7 +72,7 @@ export default function PortalPage() {
 
   function resetForm() {
     setStatus(''); setIncentives([]); setTransport('');
-    setChildrenCount(''); setOtherAdults(''); setComment('');
+    setChildrenCount(''); setOtherAdults(''); setNumAdults(''); setComment('');
   }
 
   function formatPhone(phone) {
@@ -150,6 +151,7 @@ export default function PortalPage() {
     if (status === 'Attending' || status === 'Call Back') {
       payload.incentives = incentives; payload.transport = transport;
       payload.children = childrenCount; payload.otherAdults = otherAdults;
+      payload.numAdults = numAdults;
     }
     if (retry === 0) backupSave(payload);
     try {
@@ -276,8 +278,10 @@ export default function PortalPage() {
                   <input type="text" className="form-input" placeholder="City & Postcode (blank if No)" value={transport} onChange={e => setTransport(e.target.value)} /></div>
                 <div className="form-group"><label className="form-label"><i className="fas fa-child"></i> Children?</label>
                   <input type="number" className="form-input" min="0" placeholder="Number" value={childrenCount} onChange={e => setChildrenCount(e.target.value)} /></div>
-                <div className="form-group"><label className="form-label"><i className="fas fa-user-friends"></i> Other adults?</label>
-                  <textarea className="form-textarea" placeholder="Name, Email, Phone..." value={otherAdults} onChange={e => setOtherAdults(e.target.value)}></textarea></div>
+                <div className="form-group"><label className="form-label"><i className="fas fa-users"></i> Number of adults expected</label>
+                  <input type="number" className="form-input" min="0" placeholder="How many adults in total?" value={numAdults} onChange={e => setNumAdults(e.target.value)} /></div>
+                <div className="form-group"><label className="form-label"><i className="fas fa-user-friends"></i> Other adults’ details</label>
+                  <textarea className="form-textarea" placeholder="Name, Email, Phone of other adults..." value={otherAdults} onChange={e => setOtherAdults(e.target.value)}></textarea></div>
               </div>
             )}
 

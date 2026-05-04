@@ -142,6 +142,7 @@ export async function retryPendingSaves() {
         transport: payload.transport,
         children: payload.children,
         otherAdults: payload.otherAdults,
+        numAdults: payload.numAdults,
       });
       removeBackup(payload.id);
       recovered++;
